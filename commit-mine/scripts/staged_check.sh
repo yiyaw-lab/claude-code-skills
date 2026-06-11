@@ -43,7 +43,9 @@ fi
 
 echo
 echo "== staged ADDED lines (foreign-symbol review: every line must be YOURS)"
-git diff --cached | grep '^+' | grep -v '^+++' | sed 's/^+//' | head -200
+# deletions-only diffs yield zero added lines; grep's exit 1 must not kill the
+# script under set -e (that false-red bug shipped once)
+{ git diff --cached | grep '^+' | grep -v '^+++' | sed 's/^+//' | head -200; } || true
 
 echo
 echo "== reminder: suite can't catch lazy imports / daemon-thread targets —"
