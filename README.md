@@ -11,6 +11,8 @@ I'm [yiya](https://yiya.dev) — non-traditional engineer building in public on 
 | [archive-session](archive-session/) | Archives a Claude Code session into the project's `private/` folder: full transcript, durable findings + decisions docs, and a graded session summary — scoring both my prompting and the agent's performance. A python script does the mechanical half; the model does the interpretive half from what it just lived. |
 | [grade-session](grade-session/) | The report card, standalone: two candid graded tables — your prompting and the agent's performance — plus a coach note for each side. No dependencies; prints in chat. |
 | [snip](snip/) | Turns any file or snippet into a build-in-public bundle: disclosure-boundary + secrets check first, then a freeze-rendered PNG in my house style, a draft post caption, and a posted/not-posted index. |
+| [until](until/) | Goal-pursuit engine: pin a verifiable objective, then attempt → verify → adjust until it's done. Negative-control checks, a hypothesis ledger that forbids re-testing refuted ideas, git checkpoints, and a forced escalation ladder ending in fresh-context subagents. Survives session death via a state file. |
+| [card](card/) | Stages one insight as a designed, share-ready PNG — modern product aesthetic (gradient accents, glassy pills, ambient glow), rendered from HTML/CSS via headless Chrome. /snip shows source; /card stages an idea. |
 
 ## Install
 

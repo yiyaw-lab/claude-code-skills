@@ -1,0 +1,6 @@
+.env
+*.env
+private/
+TASTE.md
+*.secret*
+.DS_Store
