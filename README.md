@@ -2,7 +2,7 @@
 
 Skills and slash commands from my working Claude Code setup. Shared as-is — these run my actual workflow, not a polished library, and I'm not maintaining a community around them.
 
-I'm [yiya](https://yiya.dev) — non-traditional engineer building Synapi, where I benchmark how AI teams should allocate work. I build in public on [X @yiyadev](https://x.com/yiyadev).
+I'm [yiya](https://yiya.dev) — non-traditional engineer building in public on [X @yiyadev](https://x.com/yiyadev). I work on a few projects — [Synapi](https://synapi.app) is one — but the one I'm most excited about is a company brain + a factory that builds itself. The skills in this repo are working parts of that machine.
 
 ## Skills
 
