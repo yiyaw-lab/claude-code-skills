@@ -1,5 +1,5 @@
 ---
-description: Harvest the session that's ending — milk every durable asset (transcript + findings + decisions + a candid graded report card + build-log + memory) so the next run starts richer. Renamed from /archive-session; folds in /grade-session's grade.
+description: Harvest the session that's ending — extract every durable asset (transcript + findings + decisions + a candid graded report card + build-log + memory) so the next run starts richer. Renamed from /archive-session; folds in /grade-session's grade.
 argument-hint: "[project-name-or-path] (optional; defaults to the project this session worked on)"
 allowed-tools: Bash, Read, Write, Edit
 ---
@@ -31,12 +31,7 @@ It writes the transcript body and prints a JSON report. **Verify `jsonl_used` / 
 - **Session summary** (always): write `summary_path`. Open with the `# Session Evaluation` block from Step 5 (the two graded tables + Coach/Agent notes); then `---`; then `# <Project> Session <NN> Summary` with Date, Session (transcript filename), `## What Happened` (bullets, linking Finding_/Decision_ ids), `## Key Output`.
 
 ## Step 5 — Grade candidly (the /grade-session half) — write it into the summary AND print it in chat
-Grade from what you lived (do NOT re-read the transcript). Two tables; each row: Dimension | Grade (A–F, +/− allowed) | one candid sentence specific to THIS session.
-- **User Communication** — Prompt Clarity (could you act on first read, or guess?) · Context Provided (gave what you needed, or you had to dig?) · Specificity of Intent (stated the goal, or just an artifact?) · Feedback Quality (when correcting you, said what was wrong AND why?).
-- **Agent Performance** (be harder on yourself than on the user) — Output Quality (correct/complete/idiomatic?) · Alignment to Intent (built what was MEANT, not just said?) · Depth (surfaced non-obvious considerations, or shallow?) · Efficiency (wasted turns, redundant work, questions you could've answered yourself?) · Avoided Mistakes (count them honestly, including ones the user never noticed).
-- **Coach Note (for user)** — 2–3 sentences: the single highest-leverage change to how they prompt and steer, grounded in a real moment from this session.
-- **Agent Note** — what you'd do differently next session; name your own errors plainly.
-Rules: grade candidly — a report card of straight A's is a failed grading; every grade must be justifiable by a specific moment. This block goes into the summary file (Step 4) AND is **printed in chat** at the end so the user sees the grade without opening the file.
+Produce the grade exactly per `/grade-session` — that skill's rubric is the SINGLE SOURCE (read `~/.claude/commands/grade-session.md` rather than re-deriving it here): its two tables (User Communication · Agent Performance) + Coach Note + Agent Note, graded from what you lived (do NOT re-read the transcript), candid (a report card of straight A's is a failed grading), every grade justifiable by a specific moment from THIS session. Harvest-specific (the only part beyond a standalone /grade-session): this block OPENS the summary file (Step 4) AND is **printed in chat** at the end, so the user sees the grade without opening the file.
 
 ## Step 6 — Build log (always)
 - Append a session entry to `<ROOT>/private/build_log.md` (create with `# <Project> — Build Log` + `---` if missing). Match the established entry format: `## <YYYY-MM-DD> — Session <NN>: <Topic>` · bold **Duration / Stack / Spend** lines (only what you actually know — never invent numbers) · `### Built` (concrete artifacts) · `### Key decisions` · `### Lessons` (hard-won only).
@@ -53,6 +48,7 @@ Bundle each under `~/build-in-public/snippets/<YYYY-MM-DD>_<slug>/` with a draft
 ## Step 8 — Index, memory, report
 - If `private/README.md` has a Sessions list, add this session's line. If no README exists and the project wants one, create a brief index.
 - Update any relevant memory files so the next session loads the FINAL state, not retracted intermediate claims — and bank at least one concrete self-lesson from this session (the reflection ritual) so the same mistake never recurs.
+- **Stash drain check (the way-out hook):** count the open `[ ]` lines in `~/.claude/stash/INBOX.md`; if any, list them and offer `/stash drain` so loose ends don't cross the session boundary un-triaged (harvest reminds, it does not auto-drain — the user picks).
 - Print a concise report of every file created/updated (paths), the session number, the graded report card from Step 5, AND the build-in-public asset(s) from Step 7.
 
 Keep each artifact tight and high-signal — these are durable records, not a dump.
