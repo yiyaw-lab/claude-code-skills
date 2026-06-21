@@ -1,36 +1,54 @@
-# claude-code-skills
+<h1 align="center">agent-armor</h1>
 
-Working skills from my Claude Code setup. Every one of them runs my actual day: they have shipped real branches, caught real bugs, and billed real tokens. A skill lands in this repo only after it has survived contact with my own work.
+<p align="center">
+  <img src="assets/banner.png" alt="Agents are cheap. Verification is the product." width="100%">
+</p>
 
-I'm [yiya](https://yiya.dev), a non-traditional engineer building in public on [X @yiyadev](https://x.com/yiyadev). I work on a few projects ([Synapi](https://synapi.app) is one), but the machine I care most about is a company brain plus a factory that builds itself. These skills are its working parts, and the build log for all of them is on X.
+<p align="center">
+  <a href="https://github.com/yiyaw-lab/agent-armor/blob/main/LICENSE"><img src="https://img.shields.io/github/license/yiyaw-lab/agent-armor?style=flat-square&color=0a0a0f&labelColor=0a0a0f&logoColor=white" alt="License: MIT"></a>
+  <img src="https://img.shields.io/badge/skills-17-fab387?style=flat-square&labelColor=0a0a0f" alt="17 skills">
+  <a href="https://github.com/yiyaw-lab/agent-armor/commits/main"><img src="https://img.shields.io/github/last-commit/yiyaw-lab/agent-armor?style=flat-square&color=fab387&labelColor=0a0a0f" alt="Last commit"></a>
+  <a href="https://docs.claude.com/en/docs/claude-code"><img src="https://img.shields.io/badge/Claude_Code-skills-0a0a0f?style=flat-square&logo=anthropic&logoColor=fab387&labelColor=0a0a0f" alt="Claude Code"></a>
+  <a href="https://x.com/yiyadev"><img src="https://img.shields.io/badge/follow-%40yiyadev-0a0a0f?style=flat-square&logo=x&logoColor=white&labelColor=0a0a0f" alt="Follow @yiyadev"></a>
+</p>
 
-The common thread: **agents are cheap, verification is the product.** Most of these skills exist to make an agent prove its work instead of describe it. Pinned done-checks with negative controls. Fresh-context reviewers told to refute, not approve. Measured token economics instead of vibes. Staged-snapshot tests instead of "looks right." The first overnight run of `/nightshift` shipped 6 of 6 tasks at $11.52 per shipped task, and the one defect of the night was caught by exactly this discipline: an agent gamed its own done-check and the adversarial reviewer refused it.
+**Agents are cheap. Verification is the product.**
 
-## Skills, by function
+An agent will generate anything you ask — that is the free part. *Armor* is what makes it safe to wield: the verification that forces it to **prove** its work instead of describe it, the economics that price every token, the flywheel that compounds what it learns across sessions, and the guardrails that make a dangerous move structurally impossible instead of merely discouraged. This repo is that armor — seventeen working Claude Code skills, and a playbook for harnessing a coding agent without getting cut by it.
 
-Seventeen skills, grouped by what they actually do. They compose into one loop — *verify the work, bank what's durable, sharpen the tools, ship the gold* — but each runs standalone.
+The proof, not the pitch: the first overnight `/nightshift` run shipped 6 of 6 tasks at **$11.52 per shipped task** — and the one defect that night was caught by exactly this discipline. An agent gamed its own done-check; the adversarial reviewer refused it. That refusal is the whole thesis in one event.
+
+Every skill here runs my actual day — shipped real branches, caught real bugs, billed real tokens. A skill lands in this repo only after it has survived contact with my own work; that is the admission bar, not a feature count.
+
+I'm [yiya](https://yiya.dev), a non-traditional engineer building in public on [X @yiyadev](https://x.com/yiyadev) — the build log for every skill is there. I work on a few things ([Synapi](https://synapi.app) is one), but the machine I care about most is a company brain plus a factory that builds itself. This armor is its working parts.
+
+## The playbook
+
+Five principles for getting trustworthy, compounding work out of a coding agent — each one backed by skills that make it real. They compose into one loop — *prove the work, bank what's durable, sharpen the tools, ship the gold* — but every skill runs standalone.
 
 ```
-  claude-code-skills · by function
+  agent-armor · the playbook
   ───────────────────────────────────────────────────────────────────
-  VERIFICATION & PURSUIT       make the agent prove its work
-     until · nightshift · commit-mine · page-audit
+  1 · MAKE IT PROVE, DON'T DESCRIBE   verification you can't fake
+       until · nightshift · commit-mine · page-audit
   ───────────────────────────────────────────────────────────────────
-  THE SESSION FLYWHEEL         capital in and out of every session
-     harvest → capitalize → milk · stash · burn
+  2 · COMPOUND EVERY SESSION          capital in and out of each run
+       harvest → capitalize → milk · stash · burn
   ───────────────────────────────────────────────────────────────────
-  JUDGMENT & SELF-IMPROVEMENT  the suite grades and sharpens itself
-     grade-session · hone · taste
+  3 · GRADE + SHARPEN AUTOMATICALLY   the suite improves itself
+       grade-session · hone · taste
   ───────────────────────────────────────────────────────────────────
-  KEEP IT LEAN & CURRENT       cut what shouldn't exist, track the edge
-     raze (alias: elonize) · frontier
+  4 · DELETE BEFORE YOU OPTIMIZE      cut what shouldn't exist, hold the edge
+       raze (alias: elonize) · frontier
   ───────────────────────────────────────────────────────────────────
-  BUILD-IN-PUBLIC & AUTHORING  turn work into shareable craft
-     card · snip · prompt
+  5 · SHIP THE CRAFT                  turn the work into shareable proof
+       card · snip · prompt
   ───────────────────────────────────────────────────────────────────
 ```
 
-### Verification & pursuit — make the agent prove its work
+### 1 · Make it prove, don't let it describe
+The agent's word that something works is worth nothing. These make it produce evidence — a check that can fail, a reviewer that wants to refuse, a measurement instead of a screenshot.
+
 | Skill | What it does |
 |-------|--------------|
 | [until](until/) | Goal-pursuit engine: pin a verifiable objective, then attempt, verify, adjust until it is done. Negative-control checks so a passing test means something, a hypothesis ledger that forbids re-testing refuted ideas, git checkpoints, and a forced escalation ladder ending in fresh-context subagents. Survives session death via a state file. |
@@ -38,7 +56,9 @@ Seventeen skills, grouped by what they actually do. They compose into one loop �
 | [commit-mine](commit-mine/) | Commit only this session's work out of a dirty tree that parallel agent sessions are also editing. Positive hunk selection, a staged-snapshot test that runs the suite against the index rather than the working tree, and a foreign-symbol check before every commit. Ships the checker script. |
 | [page-audit](page-audit/) | Audit a local HTML page the trustworthy way: measurements are facts, screenshots are testimony. An instrumented iframe harness reports overflow and element widths per viewport before any screenshot, then modern headless Chrome captures with animations neutralized. Includes a catalogue of headless-rendering artifacts that look like bugs and aren't. |
 
-### The session flywheel — capital in and out of every session
+### 2 · Compound every session — never pay rent twice
+A session's hard-won context evaporates at its end unless you bank it. This is the flywheel: deposit what's durable on the way out, withdraw the relevant slice on the way in, and stop re-learning the same project every morning.
+
 | Skill | What it does |
 |-------|--------------|
 | [harvest](harvest/) | Reap an ending session for everything durable, so the next run starts richer: full transcript, durable findings/decisions docs, a candid graded report card (delegated to `grade-session`), a build-log entry, banked memory lessons, then an auto-staged build-in-public `/card` or `/snip` of the session's most shareable gold (disclosure-gated). A python script does the mechanical half; the model does the interpretive half from what it just lived. |
@@ -47,20 +67,26 @@ Seventeen skills, grouped by what they actually do. They compose into one loop �
 | [stash](stash/) | Zero-friction capture inbox for the thought that flies past mid-task: park it in one line, keep working, drain it later into the gated skill that owns its destination. A waiting room, not a store — an item leaves only by landing somewhere durable. Capture is trivial; the drain is the product. |
 | [burn](burn/) | Token-economics engine: audit where a session's tokens actually went (with real-$ math from transcript usage), pay down "session rent" by writing re-learned facts where they load once, and install structural spend disciplines — built on agentic billing mechanics, not "be concise" tips. Modes: audit / rent / charter. |
 
-### Judgment & self-improvement — the suite grades and sharpens itself
+### 3 · Grade the work, and sharpen the tools — automatically
+Armor that never adjusts to where it keeps getting hit is just decoration. This layer grades each session candidly, then feeds the recurring failures back into the skills themselves.
+
 | Skill | What it does |
 |-------|--------------|
 | [grade-session](grade-session/) | The report card, standalone: two candid graded tables (your prompting, the agent's performance) plus a coach note for each side. Straight A's count as failed grading. No dependencies; prints in chat. Also the single source `/harvest` delegates its grading to. |
 | [hone](hone/) | Closes the grade→improvement loop: reads the accumulated `grade-session` report cards, finds failures that RECUR across sessions, and proposes surgical edits to the skill bodies that caused them — writing only on approval. The suite's self-improvement layer (recurrence-gated, propose-on-approval, lane-disciplined). Modes: sweep / audit / `<skill>`. |
 | [taste](taste/) | Distill your revealed taste from real session transcripts into an enforceable personal rubric, then apply it as a pre-delivery filter. Mines what you actually corrected and accepted — never what you say you prefer. Modes: induce / apply / audit. |
 
-### Keep it lean & current — cut what shouldn't exist, track the edge
+### 4 · Delete before you optimize, and hold the frontier
+The fastest, safest, cheapest part is the one that no longer exists. One scythe questions whether a thing should exist at all; the other checks whether what remains is still state-of-the-art.
+
 | Skill | What it does |
 |-------|--------------|
 | [raze](raze/) | Apply the razor: question every requirement, then DELETE whole parts/processes before any optimization (Musk's Algorithm; "the best part is no part"). A "should this EXIST at all" scythe, not a tidy-up. Propose-on-approval, a ≥80 unused-confidence gate, branch-only, graded by a two-sided add-back rate. Alias: `/elonize`. |
 | [frontier](frontier/) | "Am I at the frontier?" — for any SURFACE (design, model stack, infra, content...), audit where your work has fallen behind the live current standard (benchmarked against that surface's frontier exemplars) and, on approval, provision the current frontier toolchain. The external standard-SETTER: discovers live (no baked-in tool list), adopts under raze's additive-safety contract. Modes: audit / plan / apply / refresh. |
 
-### Build-in-public & authoring — turn work into shareable craft
+### 5 · Ship the craft — turn the work into shareable proof
+The work is more credible when it is visible. These turn a finding, a clean snippet, or a reusable prompt into something a frontier builder would repost — secrets-gated, never auto-posted.
+
 | Skill | What it does |
 |-------|--------------|
 | [card](card/) | Stages one insight as a designed, share-ready PNG in a modern product aesthetic (gradient accents, glassy pills, ambient glow), rendered from HTML/CSS via headless Chrome. Reads the house visual system from `DESIGN_SYSTEM.md`. `/snip` shows source; `/card` stages an idea. |
@@ -69,7 +95,7 @@ Seventeen skills, grouped by what they actually do. They compose into one loop �
 
 ## Start here
 
-If you take one skill, take `until`: it changes what "done" means for everything else you run. If you take two, add `nightshift`, which runs its tasks as until-style pursuits while you sleep. If agents step on each other in one repo, `commit-mine` is the painkiller. And if you want the compounding system, the flywheel is `harvest` → `capitalize` (deposit at session end, withdraw at the next start), with `hone` quietly sharpening the skills themselves from their own report cards.
+If you take one piece of armor, take `until`: it changes what "done" means for everything else you run. If you take two, add `nightshift`, which runs its tasks as until-style pursuits while you sleep. If agents step on each other in one repo, `commit-mine` is the painkiller. And if you want the compounding system, the flywheel is `harvest` → `capitalize` (deposit at session end, withdraw at the next start), with `hone` quietly sharpening the skills themselves from their own report cards.
 
 ## Install
 
@@ -91,4 +117,4 @@ mkdir -p ~/.claude/frontier && cp frontier/surfaces.md ~/.claude/frontier/surfac
 
 Some skills reference my personal conventions: a `private/` folder taxonomy, memory files, a `TASTE.md` rubric, a `DESIGN_SYSTEM.md`. Those references are the load-bearing part. Swap in your own conventions and the skills get sharper, not weaker; a verification loop tuned to nobody verifies nothing.
 
-These are shared as working parts, not a maintained library. Issues and PRs are welcome, and the contract is honest: this repo updates when my own workflow does.
+These are shared as working parts, not a maintained library. Issues and PRs are welcome, and the contract is honest: this armor updates when my own workflow does.

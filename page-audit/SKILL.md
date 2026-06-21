@@ -9,7 +9,7 @@ You are auditing a local HTML page. The core rule: **measurements are facts; scr
 ## Step 1 - Measure (facts)
 Run the bundled harness against the page at each target width (default `390,768,1440`; honor `$ARGUMENTS`):
 ```
-python3 ~/claude-code-skills/page-audit/scripts/measure_page.py <page.html> --widths 390,768,1440
+python3 ~/agent-armor/page-audit/scripts/measure_page.py <page.html> --widths 390,768,1440
 ```
 Mechanics, so you can interpret its output: it wraps the page in a fixed-width iframe (so media queries apply per width regardless of the browser window), renders via `--dump-dom` under `--virtual-time-budget=5000` with a 1.8s in-page settle, and reports per width: `scrollWidth` vs viewport (horizontal overflow) and every element whose bounding rect exceeds the viewport by more than 2px after rounding to whole pixels (tag.class, right edge, width; capped at 20 offenders, so bleeds that round to 2px or less never appear in the list). It finds Chrome automatically (`CHROME_BIN` overrides). If the harness errors, fix the invocation; do not fall back to eyeballing.
 

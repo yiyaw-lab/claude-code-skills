@@ -29,7 +29,7 @@ You are landing this session's changes from a working tree that peer sessions al
 ## Step 2 - Prove the STAGED SNAPSHOT stands alone
 Run the bundled checker (it exports the index via `checkout-index` and tests THAT, not the working tree):
 ```
-bash ~/claude-code-skills/commit-mine/scripts/staged_check.sh [test command]
+bash ~/agent-armor/commit-mine/scripts/staged_check.sh [test command]
 ```
 A red run has four causes. Triage in this order before touching the staging:
 1. **Untracked-but-required files.** `checkout-index` exports tracked files only. Anything `??` in `git status` (artifacts you generated this session, fixtures you never added) is absent from the snapshot, and the failure looks identical to a staging gap. If your staged code needs it and it's yours, `git add` it.
