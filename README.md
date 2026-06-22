@@ -5,6 +5,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/yiyaw-lab/agent-armor/actions/workflows/validate-skills.yml"><img src="https://github.com/yiyaw-lab/agent-armor/actions/workflows/validate-skills.yml/badge.svg" alt="validate-skills CI"></a>
   <a href="https://github.com/yiyaw-lab/agent-armor/blob/main/LICENSE"><img src="https://img.shields.io/github/license/yiyaw-lab/agent-armor?style=flat-square&color=0a0a0f&labelColor=0a0a0f&logoColor=white" alt="License: MIT"></a>
   <img src="https://img.shields.io/badge/skills-17-fab387?style=flat-square&labelColor=0a0a0f" alt="17 skills">
   <a href="https://github.com/yiyaw-lab/agent-armor/commits/main"><img src="https://img.shields.io/github/last-commit/yiyaw-lab/agent-armor?style=flat-square&color=fab387&labelColor=0a0a0f" alt="Last commit"></a>

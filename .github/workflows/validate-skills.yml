@@ -1,0 +1,25 @@
+name: validate-skills
+
+# The repo's thesis is "make an agent prove its work, not describe it." This CI
+# turns that thesis on the suite itself: it refuses to take the skills' word that
+# they are well-formed and checks every SKILL.md, every script, and every link.
+# "on" is quoted so the YAML key stays the string "on" rather than the YAML 1.1
+# boolean true; GitHub accepts either, this keeps the parse unambiguous.
+"on":
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate skills (frontmatter, scripts compile, links)
+        run: python3 scripts/validate_skills.py
