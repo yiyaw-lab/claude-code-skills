@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://github.com/yiyaw-lab/agent-armor/actions/workflows/validate-skills.yml"><img src="https://github.com/yiyaw-lab/agent-armor/actions/workflows/validate-skills.yml/badge.svg" alt="validate-skills CI"></a>
   <a href="https://github.com/yiyaw-lab/agent-armor/blob/main/LICENSE"><img src="https://img.shields.io/github/license/yiyaw-lab/agent-armor?style=flat-square&color=0a0a0f&labelColor=0a0a0f&logoColor=white" alt="License: MIT"></a>
-  <img src="https://img.shields.io/badge/skills-22-fab387?style=flat-square&labelColor=0a0a0f" alt="22 skills">
+  <img src="https://img.shields.io/badge/skills-23-fab387?style=flat-square&labelColor=0a0a0f" alt="23 skills">
   <a href="https://github.com/yiyaw-lab/agent-armor/commits/main"><img src="https://img.shields.io/github/last-commit/yiyaw-lab/agent-armor?style=flat-square&color=fab387&labelColor=0a0a0f" alt="Last commit"></a>
   <a href="https://docs.claude.com/en/docs/claude-code"><img src="https://img.shields.io/badge/Claude_Code-skills-0a0a0f?style=flat-square&logo=anthropic&logoColor=fab387&labelColor=0a0a0f" alt="Claude Code"></a>
   <a href="https://x.com/yiyadev"><img src="https://img.shields.io/badge/follow-%40yiyadev-0a0a0f?style=flat-square&logo=x&logoColor=white&labelColor=0a0a0f" alt="Follow @yiyadev"></a>
@@ -15,7 +15,7 @@
 
 **Agents are cheap. Verification is the product.**
 
-An agent will generate anything you ask — that is the free part. *Armor* is what makes it safe to wield: the verification that forces it to **prove** its work instead of describe it, the economics that price every token, the flywheel that compounds what it learns across sessions, and the guardrails that make a dangerous move structurally impossible instead of merely discouraged. This repo is that armor — twenty-two working Claude Code skills, and a playbook for harnessing a coding agent without getting cut by it.
+An agent will generate anything you ask — that is the free part. *Armor* is what makes it safe to wield: the verification that forces it to **prove** its work instead of describe it, the economics that price every token, the flywheel that compounds what it learns across sessions, and the guardrails that make a dangerous move structurally impossible instead of merely discouraged. This repo is that armor — twenty-three working Claude Code skills, and a playbook for harnessing a coding agent without getting cut by it.
 
 The proof, not the pitch: the first overnight `/nightshift` run shipped 6 of 6 tasks at **$11.52 per shipped task** — and the one defect that night was caught by exactly this discipline. An agent gamed its own done-check; the adversarial reviewer refused it. That refusal is the whole thesis in one event.
 
@@ -43,7 +43,7 @@ Five principles for getting trustworthy, compounding work out of a coding agent 
        raze (alias: elonize) · frontier
   ───────────────────────────────────────────────────────────────────
   5 · SHIP THE CRAFT                  turn the work into shareable proof
-       card · snip · prompt
+       card · snip · publish · prompt
   ───────────────────────────────────────────────────────────────────
 ```
 
@@ -96,6 +96,7 @@ The work is more credible when it is visible. These turn a finding, a clean snip
 |-------|--------------|
 | [card](card/) | Stages one insight as a designed, share-ready PNG in a modern product aesthetic (gradient accents, glassy pills, ambient glow), rendered from HTML/CSS via headless Chrome. Reads the house visual system from `DESIGN_SYSTEM.md`. `/snip` shows source; `/card` stages an idea. |
 | [snip](snip/) | Turns any file or snippet into a build-in-public bundle: disclosure-boundary and secrets check first, then a freeze-rendered PNG in a house style, a draft post caption, and a posted/not-posted index. |
+| [publish](publish/) | Schema-first publisher: take a durable artifact from the flywheel, run disclosure and secrets checks, enforce the four-part quality gate, read the live `yiyaw-lab/yiyadev` content schemas, prove the rendered entry with a green build, and open a reviewable PR or compare URL — never merge. Modes: `<artifact>` / sweep / draft. |
 | [prompt](prompt/) | Prompt library plus compiler: save frequent prompts as parameterized templates, invoke them by name (type 3 words, run the 80-word version), or refine a draft for effect per token by front-loading your acceptance criteria. Ships with starter templates. |
 
 ## Start here
