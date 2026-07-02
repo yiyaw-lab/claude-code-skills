@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://github.com/yiyaw-lab/agent-armor/actions/workflows/validate-skills.yml"><img src="https://github.com/yiyaw-lab/agent-armor/actions/workflows/validate-skills.yml/badge.svg" alt="validate-skills CI"></a>
   <a href="https://github.com/yiyaw-lab/agent-armor/blob/main/LICENSE"><img src="https://img.shields.io/github/license/yiyaw-lab/agent-armor?style=flat-square&color=0a0a0f&labelColor=0a0a0f&logoColor=white" alt="License: MIT"></a>
-  <img src="https://img.shields.io/badge/skills-20-fab387?style=flat-square&labelColor=0a0a0f" alt="19 skills">
+  <img src="https://img.shields.io/badge/skills-22-fab387?style=flat-square&labelColor=0a0a0f" alt="22 skills">
   <a href="https://github.com/yiyaw-lab/agent-armor/commits/main"><img src="https://img.shields.io/github/last-commit/yiyaw-lab/agent-armor?style=flat-square&color=fab387&labelColor=0a0a0f" alt="Last commit"></a>
   <a href="https://docs.claude.com/en/docs/claude-code"><img src="https://img.shields.io/badge/Claude_Code-skills-0a0a0f?style=flat-square&logo=anthropic&logoColor=fab387&labelColor=0a0a0f" alt="Claude Code"></a>
   <a href="https://x.com/yiyadev"><img src="https://img.shields.io/badge/follow-%40yiyadev-0a0a0f?style=flat-square&logo=x&logoColor=white&labelColor=0a0a0f" alt="Follow @yiyadev"></a>
@@ -15,7 +15,7 @@
 
 **Agents are cheap. Verification is the product.**
 
-An agent will generate anything you ask — that is the free part. *Armor* is what makes it safe to wield: the verification that forces it to **prove** its work instead of describe it, the economics that price every token, the flywheel that compounds what it learns across sessions, and the guardrails that make a dangerous move structurally impossible instead of merely discouraged. This repo is that armor — twenty working Claude Code skills, and a playbook for harnessing a coding agent without getting cut by it.
+An agent will generate anything you ask — that is the free part. *Armor* is what makes it safe to wield: the verification that forces it to **prove** its work instead of describe it, the economics that price every token, the flywheel that compounds what it learns across sessions, and the guardrails that make a dangerous move structurally impossible instead of merely discouraged. This repo is that armor — twenty-two working Claude Code skills, and a playbook for harnessing a coding agent without getting cut by it.
 
 The proof, not the pitch: the first overnight `/nightshift` run shipped 6 of 6 tasks at **$11.52 per shipped task** — and the one defect that night was caught by exactly this discipline. An agent gamed its own done-check; the adversarial reviewer refused it. That refusal is the whole thesis in one event.
 
@@ -34,7 +34,7 @@ Five principles for getting trustworthy, compounding work out of a coding agent 
        until · nightshift · relay · full-throttle · commit-mine · tidy · page-audit
   ───────────────────────────────────────────────────────────────────
   2 · COMPOUND EVERY SESSION          capital in and out of each run
-       harvest → capitalize → milk · stash · burn
+       harvest → capitalize → milk · stash · save-prompt · burn
   ───────────────────────────────────────────────────────────────────
   3 · GRADE + SHARPEN AUTOMATICALLY   the suite improves itself
        grade-session · hone · taste
@@ -69,6 +69,7 @@ A session's hard-won context evaporates at its end unless you bank it. This is t
 | [capitalize](capitalize/) | The inbound half of the flywheel: at session start, withdraw the capital `harvest` deposited (findings, decisions, until-ledgers, ruled-out dead ends) and deploy the slice relevant to THIS task as a ready brief, so a fresh session starts warm instead of paying rent to re-learn the project. Executes nothing; ends in a menu you steer. Modes: prime / compound / statement. |
 | [milk](milk/) | Tap ONE rich asset mid-session — a deep-research report, a competitor repo, a paper, a long thread — and squeeze every durable drop (findings, decisions, saveable prompts, lessons) into your stores, without ending the session. Four-part gate + search-existing-first dedupe. Re-milkable. |
 | [stash](stash/) | Zero-friction capture inbox for the thought that flies past mid-task: park it in one line, keep working, drain it later into the gated skill that owns its destination. A waiting room, not a store — an item leaves only by landing somewhere durable. Capture is trivial; the drain is the product. |
+| [save-prompt](save-prompt/) | Prompt curation layer: save high-value prompts with the original preserved, an augmented reusable version, trigger metadata for future retrieval, and a pre-enrichment policy so broad prompts can be quietly sharpened before execution without hijacking the task. |
 | [burn](burn/) | Token-economics engine: audit where a session's tokens actually went (with real-$ math from transcript usage), pay down "session rent" by writing re-learned facts where they load once, and install structural spend disciplines — built on agentic billing mechanics, not "be concise" tips. Modes: audit / rent / charter. |
 
 ### 3 · Grade the work, and sharpen the tools — automatically
