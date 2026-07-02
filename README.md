@@ -34,7 +34,7 @@ Five principles for getting trustworthy, compounding work out of a coding agent 
        until · nightshift · relay · full-throttle · commit-mine · tidy · page-audit
   ───────────────────────────────────────────────────────────────────
   2 · COMPOUND EVERY SESSION          capital in and out of each run
-       harvest → capitalize → milk · stash · save-prompt · burn
+       harvest → capitalize → milk · stash · vault · burn
   ───────────────────────────────────────────────────────────────────
   3 · GRADE + SHARPEN AUTOMATICALLY   the suite improves itself
        grade-session · hone · taste
@@ -69,7 +69,7 @@ A session's hard-won context evaporates at its end unless you bank it. This is t
 | [capitalize](capitalize/) | The inbound half of the flywheel: at session start, withdraw the capital `harvest` deposited (findings, decisions, until-ledgers, ruled-out dead ends) and deploy the slice relevant to THIS task as a ready brief, so a fresh session starts warm instead of paying rent to re-learn the project. Executes nothing; ends in a menu you steer. Modes: prime / compound / statement. |
 | [milk](milk/) | Tap ONE rich asset mid-session — a deep-research report, a competitor repo, a paper, a long thread — and squeeze every durable drop (findings, decisions, saveable prompts, lessons) into your stores, without ending the session. Four-part gate + search-existing-first dedupe. Re-milkable. |
 | [stash](stash/) | Zero-friction capture inbox for the thought that flies past mid-task: park it in one line, keep working, drain it later into the gated skill that owns its destination. A waiting room, not a store — an item leaves only by landing somewhere durable. Capture is trivial; the drain is the product. |
-| [save-prompt](save-prompt/) | Prompt curation layer: save high-value prompts with the original preserved, an augmented reusable version, trigger metadata for future retrieval, and a pre-enrichment policy so broad prompts can be quietly sharpened before execution without hijacking the task. |
+| [vault](vault/) | Prompt capital vault: save high-value prompts with the original preserved, an augmented reusable version, trigger metadata for future retrieval, and a pre-enrichment policy so broad prompts can be quietly sharpened before execution without hijacking the task. |
 | [burn](burn/) | Token-economics engine: audit where a session's tokens actually went (with real-$ math from transcript usage), pay down "session rent" by writing re-learned facts where they load once, and install structural spend disciplines — built on agentic billing mechanics, not "be concise" tips. Modes: audit / rent / charter. |
 
 ### 3 · Grade the work, and sharpen the tools — automatically

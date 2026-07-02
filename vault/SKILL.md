@@ -1,24 +1,24 @@
 ---
-description: "Prompt capture plus pre-enrichment policy. Save high-value reusable prompts, preserve the original, write a stronger reusable version, add trigger metadata for future retrieval, and decide when broad prompts should be pre-enriched before implementation. Modes: save | enrich | fire | list."
+description: "Prompt vault plus pre-enrichment policy. Save high-value reusable prompts, preserve the original, write a stronger reusable version, add trigger metadata for future retrieval, and decide when broad prompts should be pre-enriched before implementation. Modes: save | enrich | fire | list."
 argument-hint: "save [last|<prompt>] | enrich [last|<prompt>] | fire <context> | list"
 ---
 
 Archive prompts worth reusing. Preserve the user's original wording, add a stronger reusable version, and record when the prompt should or should not be retrieved later. Also decide whether broad prompts should be pre-enriched before implementation.
 
-This skill is stricter than `/prompt`: `/prompt` is a prompt compiler and template runner; `/save-prompt` is the library curation and retrieval policy layer.
+This skill is stricter than `/prompt`: `/prompt` is a prompt compiler and template runner; `/vault` is the library curation and retrieval policy layer.
 
 ## Archive Location
 
 When running from this repo, save entries under:
 
 ```text
-save-prompt/prompt-library/
+vault/prompt-library/
 ```
 
-When installed locally, use the equivalent installed skill folder, for example:
+When installed in Claude Code, use the equivalent installed skill folder:
 
 ```text
-~/.codex/skills/save-prompt/prompt-library/
+~/.claude/skills/vault/prompt-library/
 ```
 
 Use one Markdown file per saved prompt:
